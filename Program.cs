@@ -1,6 +1,7 @@
 ﻿using System;
 using DataStructures.Trees;
 
+using Algorithms.Problem;
 using Algorithms.Problem.Greed;
 
 namespace Algorithms
@@ -9,11 +10,13 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            Greed greed = new Greed();
-            Console.WriteLine("거스름 돈의 동전의 최소 갯수 구하기");
-            
-            Console.WriteLine("거스름 돈" + greed.Change(1260));
-            Console.WriteLine("거스름 돈" + greed.Change(3480));
+            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.Problem_0(25, 5));
+            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.Problem_1(25, 5));
+            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.Problem_2(25, 5));
+
+            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.Problem_0(18, 5));
+            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.Problem_1(18, 5));
+            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.Problem_2(18, 5));
         }
     }
 }
