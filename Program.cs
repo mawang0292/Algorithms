@@ -1,32 +1,19 @@
 ﻿using System;
 using DataStructures.Trees;
 
+using Algorithms.Problem.Greed;
+
 namespace Algorithms
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            BSTNode<int> a = new BSTNode<int>();
-            BSTNode<int> b = new BSTNode<int>();
-            BSTNode<int> c = new BSTNode<int>();
-
-            a.Value = 5;
-            b.Value = 3;
-            c.Value  = 7;
-
-            a.LeftChild = b;
-            a.RightChild = c;
-
-            Console.WriteLine(a.Value);
-            Console.WriteLine(b.Value);
-            Console.WriteLine(c.Value);
-
-            Console.WriteLine(a.IsLeafNode);
-            Console.WriteLine(a.HasChildren);
-            Console.WriteLine(a.HasLeftChild);
-            Console.WriteLine(a.HasRightChild);
+            Greed greed = new Greed();
+            Console.WriteLine("거스름 돈의 동전의 최소 갯수 구하기");
+            
+            Console.WriteLine("거스름 돈" + greed.Change(1260));
+            Console.WriteLine("거스름 돈" + greed.Change(3480));
         }
     }
 }
