@@ -10,13 +10,12 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.UntilOne_0(25, 5));
-            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.UntilOne_1(25, 5));
-            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.UntilOne_2(25, 5));
-
-            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.UntilOne_0(18, 5));
-            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.UntilOne_1(18, 5));
-            Console.WriteLine("1 이 될때까지 수행된 최소 횟수 : "+Greed.UntilOne_2(18, 5));
+            string s = "02984";
+            string s1 = "567";
+            Console.WriteLine("곱하기 혹은 더하기 문제 : " + Algorithms.Problem.Greed.Greed.MultiplyOrAdd_0(s));
+            Console.WriteLine("곱하기 혹은 더하기 문제 : " + Algorithms.Problem.Greed.Greed.MultiplyOrAdd_0(s1));
+            Console.WriteLine("곱하기 혹은 더하기 문제 : " + Algorithms.Problem.Greed.Greed.MultiplyOrAdd_1(s));
+            Console.WriteLine("곱하기 혹은 더하기 문제 : " + Algorithms.Problem.Greed.Greed.MultiplyOrAdd_1(s1));
         }
     }
 }
