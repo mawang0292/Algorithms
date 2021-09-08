@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 
 namespace Algorithms.Problem.Greed
 {
@@ -157,5 +157,76 @@ namespace Algorithms.Problem.Greed
             }
             return result;
         }
+
+        /// <summary>
+        /// * <문제> N명의 모험가
+        /// * 한 마을에 모험가가 N명 있습니다. 모험가 길드에서는 N명의 모험가를 대상으로 '공포도'를 측정했는데,
+        /// * '공포도'가 높은 모험가는 쉽게 공포를 느껴 위험 상황에서 제대로 대처할 능력이 떨어집니다.
+        /// * 모험가 길드장인 길드마스터는 모험가 그룹을 안전하게 구성하고자 공포도가 X인 모험가는 반드시 X명 이상으로
+        /// * 구성한 모험가 그룹에 참여해야 여행을 떠날 수 있도록 규정했습니다.
+        /// * 길드마스터는 최대 몇 개의 모험가 그룹을 만들 수 있는지 궁금합니다. N명의 모험가에 대한 정보가 주어졌을때,
+        /// * 여행을 떠날 수 있는 그룹 수의 최댓값을 구하는 프로그램을 작성하세요
+        /// </summary>
+        public static void NAdventurers()
+        {
+            //* 문제 데이터 입력 부분
+            int n = 0;
+            Console.Write("모험가 인원수 를 입력해주세요 : ");
+            n = Int32.Parse(Console.ReadLine());
+
+            string str = null;
+            string[] token;
+            List<int> array = new List<int>();
+
+            Console.Write(n + "명의 모험가에게 공포도를 넣어주세요 : ");
+            str = Console.ReadLine();
+            token = str.Split(' ');
+            if (token.Length != n)
+            {
+                Console.WriteLine("공포도 잘못입력했습니다.");
+                return;
+            }
+            for (int i = 0; i < n; i++)
+            {
+                array.Add(Convert.ToInt32(token[i]));
+            }
+
+
+            Console.Write("모험가 공포도 : ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(array[i] + " ");
+            }
+
+
+            //* 총 그룹의 수
+            int result = 0;
+            //* 현재 그룹에 포함된 모험가 수
+            int count = 0;
+
+            //* 모험가의 공포도를 정렬시킨다.
+            array.Sort();
+
+            Console.WriteLine();
+            Console.Write("모험가 공포도 : ");
+
+            for (int i = 0; i < array.Count; i++)
+            {
+                //* 그룹에 모험가를 1명씩 포함시킨다.
+                count += 1;
+                //* 그룹의 모험가 수가 공포도 와 같거나 크면 파티를 결성한다.
+                if (count >= array[i]) 
+                {
+                    //* 그룹수를 추가한다.
+                    result += 1;
+                    //* 그룹에 포함된 모험가수를 초기화한다.
+                    count = 0;
+                }
+            }
+            Console.WriteLine("결성된 그룹의 수 : " + result);
+        }
+
+
     }
+
 }
